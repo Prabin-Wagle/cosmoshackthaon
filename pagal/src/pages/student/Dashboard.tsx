@@ -1,5 +1,5 @@
 import React from 'react';
-import { LayoutDashboard, BookOpen, ShoppingBag, Settings, LogOut } from 'lucide-react';
+import { LayoutDashboard, BookOpen, ShoppingBag, AlertTriangle, Settings, LogOut } from 'lucide-react';
 
 const StudentDashboard = () => {
   return (
@@ -32,6 +32,14 @@ const StudentDashboard = () => {
           </div>
           <h3 className="text-lg font-semibold text-slate-800">Store</h3>
           <p className="text-slate-500 text-sm mt-2">Purchase books and equipment with ease.</p>
+        </div>
+
+        <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+          <div className="w-12 h-12 bg-rose-100 rounded-xl flex items-center justify-center text-rose-600 mb-4">
+            <AlertTriangle size={24} />
+          </div>
+          <h3 className="text-lg font-semibold text-slate-800">Exam Traps</h3>
+          <p className="text-slate-500 text-sm mt-2">Common pitfalls and tricky questions to watch out for.</p>
         </div>
       </div>
     </div>
