@@ -69,7 +69,7 @@ export default function Login() {
           <div className="flex justify-center mb-6">
             <div className="p-2 rounded-3xl bg-white dark:bg-gray-800 shadow-inner border border-gray-100 dark:border-gray-800">
               <img
-                src="https://notelibraryapp.com/p.jpg"
+                src="public\assets\pure.jpg"
                 alt="NoteLibrary"
                 className="h-16 w-16 rounded-2xl object-cover"
               />

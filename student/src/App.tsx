@@ -29,7 +29,6 @@ import SmartPracticeBuilderPage from './pages/SmartPracticeBuilderPage';
 import ProfilePage from './pages/ProfilePage';
 import ContactPage from './pages/ContactPage';
 import SupportTicketsPage from './pages/SupportTicketsPage';
-import SecurityManager from './components/SecurityManager';
 import SupportTicketDetailsPage from './pages/SupportTicketDetailsPage';
 import GlobalMusicPlayer from './components/GlobalMusicPlayer';
 
@@ -39,246 +38,244 @@ function App() {
     <BrowserRouter>
       <ThemeProvider>
         <AuthProvider>
-          <SecurityManager>
-            <Toaster position="top-center" reverseOrder={false} />
-            <Routes>
-              {/* Public routes */}
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/verify-otp" element={<VerifyOTP />} />
-              <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Toaster position="top-center" reverseOrder={false} />
+          <Routes>
+            {/* Public routes */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/verify-otp" element={<VerifyOTP />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
 
-              {/* Protected routes */}
-              <Route
-                path="/dashboard"
-                element={
-                  <ProtectedRoute>
-                    <DashboardLayout>
-                      <Dashboard />
-                    </DashboardLayout>
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/subjects"
-                element={
-                  <ProtectedRoute>
-                    <DashboardLayout>
-                      <SubjectResources />
-                    </DashboardLayout>
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/subjects/:subjectName"
-                element={
-                  <ProtectedRoute>
-                    <DashboardLayout>
-                      <SubjectDetails />
-                    </DashboardLayout>
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/competitive/:subjectName"
-                element={
-                  <ProtectedRoute>
-                    <DashboardLayout>
-                      <CompetitiveSubjectPage />
-                    </DashboardLayout>
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/test-series"
-                element={
-                  <ProtectedRoute>
-                    <DashboardLayout>
-                      <TestSeriesPage />
-                    </DashboardLayout>
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/books"
-                element={
-                  <ProtectedRoute>
-                    <DashboardLayout>
-                      <BooksPage />
-                    </DashboardLayout>
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/notices"
-                element={
-                  <ProtectedRoute>
-                    <DashboardLayout>
-                      <NoticesPage />
-                    </DashboardLayout>
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/notices/:slug"
-                element={
-                  <ProtectedRoute>
-                    <DashboardLayout>
-                      <NoticeDetailPage />
-                    </DashboardLayout>
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/test-series"
-                element={
-                  <ProtectedRoute>
-                    <DashboardLayout>
-                      <TestSeriesPage />
-                    </DashboardLayout>
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/test-series/:collectionId"
-                element={
-                  <ProtectedRoute>
-                    <DashboardLayout>
-                      <CollectionContentPage />
-                    </DashboardLayout>
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/test-series/quiz/:quizId"
-                element={
-                  <ProtectedRoute>
-                    <QuizPlayerPage />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/test-series/history/:quizId"
-                element={
-                  <ProtectedRoute>
-                    <DashboardLayout>
-                      <QuizHistoryPage />
-                    </DashboardLayout>
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/test-series/result/:attemptId"
-                element={
-                  <ProtectedRoute>
-                    <DashboardLayout>
-                      <QuizResultPage />
-                    </DashboardLayout>
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/mistake-mastery"
-                element={
-                  <ProtectedRoute>
-                    <DashboardLayout>
-                      <MistakePracticePage />
-                    </DashboardLayout>
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/smart-practice"
-                element={
-                  <ProtectedRoute>
-                    <DashboardLayout>
-                      <SmartPracticeBuilderPage />
-                    </DashboardLayout>
-                  </ProtectedRoute>
-                }
-              />
+            {/* Protected routes */}
+            <Route
+              path="/dashboard"
+              element={
+                <ProtectedRoute>
+                  <DashboardLayout>
+                    <Dashboard />
+                  </DashboardLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/subjects"
+              element={
+                <ProtectedRoute>
+                  <DashboardLayout>
+                    <SubjectResources />
+                  </DashboardLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/subjects/:subjectName"
+              element={
+                <ProtectedRoute>
+                  <DashboardLayout>
+                    <SubjectDetails />
+                  </DashboardLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/competitive/:subjectName"
+              element={
+                <ProtectedRoute>
+                  <DashboardLayout>
+                    <CompetitiveSubjectPage />
+                  </DashboardLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/test-series"
+              element={
+                <ProtectedRoute>
+                  <DashboardLayout>
+                    <TestSeriesPage />
+                  </DashboardLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/books"
+              element={
+                <ProtectedRoute>
+                  <DashboardLayout>
+                    <BooksPage />
+                  </DashboardLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/notices"
+              element={
+                <ProtectedRoute>
+                  <DashboardLayout>
+                    <NoticesPage />
+                  </DashboardLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/notices/:slug"
+              element={
+                <ProtectedRoute>
+                  <DashboardLayout>
+                    <NoticeDetailPage />
+                  </DashboardLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/test-series"
+              element={
+                <ProtectedRoute>
+                  <DashboardLayout>
+                    <TestSeriesPage />
+                  </DashboardLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/test-series/:collectionId"
+              element={
+                <ProtectedRoute>
+                  <DashboardLayout>
+                    <CollectionContentPage />
+                  </DashboardLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/test-series/quiz/:quizId"
+              element={
+                <ProtectedRoute>
+                  <QuizPlayerPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/test-series/history/:quizId"
+              element={
+                <ProtectedRoute>
+                  <DashboardLayout>
+                    <QuizHistoryPage />
+                  </DashboardLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/test-series/result/:attemptId"
+              element={
+                <ProtectedRoute>
+                  <DashboardLayout>
+                    <QuizResultPage />
+                  </DashboardLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/mistake-mastery"
+              element={
+                <ProtectedRoute>
+                  <DashboardLayout>
+                    <MistakePracticePage />
+                  </DashboardLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/smart-practice"
+              element={
+                <ProtectedRoute>
+                  <DashboardLayout>
+                    <SmartPracticeBuilderPage />
+                  </DashboardLayout>
+                </ProtectedRoute>
+              }
+            />
 
-              <Route
-                path="/subjects/:subjectName/:resourceType"
-                element={
-                  <ProtectedRoute>
-                    <DashboardLayout>
-                      <ResourceView />
-                    </DashboardLayout>
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/resource/embed"
-                element={
-                  <ProtectedRoute>
-                    <DashboardLayout>
-                      <ResourceEmbed />
-                    </DashboardLayout>
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/resource/pdf"
-                element={
-                  <ProtectedRoute>
-                    <PdfReader />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/change-password"
-                element={
-                  <ProtectedRoute>
-                    <ChangePassword />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/profile"
-                element={
-                  <ProtectedRoute>
-                    <DashboardLayout>
-                      <ProfilePage />
-                    </DashboardLayout>
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/contact"
-                element={
-                  <ProtectedRoute>
-                    <DashboardLayout>
-                      <ContactPage />
-                    </DashboardLayout>
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/support-tickets"
-                element={
-                  <ProtectedRoute>
-                    <DashboardLayout>
-                      <SupportTicketsPage />
-                    </DashboardLayout>
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/support-tickets/:ticketId"
-                element={
-                  <ProtectedRoute>
-                    <DashboardLayout>
-                      <SupportTicketDetailsPage />
-                    </DashboardLayout>
-                  </ProtectedRoute>
-                }
-              />
-              {/* Default redirect */}
-              <Route path="/" element={<Navigate to="/login" replace />} />
-              <Route path="*" element={<Navigate to="/login" replace />} />
-            </Routes>
-          </SecurityManager>
+            <Route
+              path="/subjects/:subjectName/:resourceType"
+              element={
+                <ProtectedRoute>
+                  <DashboardLayout>
+                    <ResourceView />
+                  </DashboardLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/resource/embed"
+              element={
+                <ProtectedRoute>
+                  <DashboardLayout>
+                    <ResourceEmbed />
+                  </DashboardLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/resource/pdf"
+              element={
+                <ProtectedRoute>
+                  <PdfReader />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/change-password"
+              element={
+                <ProtectedRoute>
+                  <ChangePassword />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                <ProtectedRoute>
+                  <DashboardLayout>
+                    <ProfilePage />
+                  </DashboardLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/contact"
+              element={
+                <ProtectedRoute>
+                  <DashboardLayout>
+                    <ContactPage />
+                  </DashboardLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/support-tickets"
+              element={
+                <ProtectedRoute>
+                  <DashboardLayout>
+                    <SupportTicketsPage />
+                  </DashboardLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/support-tickets/:ticketId"
+              element={
+                <ProtectedRoute>
+                  <DashboardLayout>
+                    <SupportTicketDetailsPage />
+                  </DashboardLayout>
+                </ProtectedRoute>
+              }
+            />
+            {/* Default redirect */}
+            <Route path="/" element={<Navigate to="/login" replace />} />
+            <Route path="*" element={<Navigate to="/login" replace />} />
+          </Routes>
           <GlobalMusicPlayer />
         </AuthProvider>
       </ThemeProvider>
